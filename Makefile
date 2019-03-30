@@ -5,7 +5,7 @@ LIB=-lcunit
 
 all: $(OBJ_ALL)
 
-prog:
+prog: $(OBJ)
 	$(GCC) main.c $(OBJ) -o prog
 
 test: $(OBJ)
