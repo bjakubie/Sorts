@@ -6,3 +6,5 @@
 
 //tablica 10 znakow, wiec od 0 do 9
 int bubble_sort(int *tab, int size);
+
+int insertion_sort(int *tab, int size);

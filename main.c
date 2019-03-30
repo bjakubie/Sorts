@@ -17,8 +17,13 @@ int main (int argc, char *argv[]){
     }
   }
 
-  bubble_sort(arg_tab, argc-1);
-
+  insertion_sort(arg_tab, argc-1);
+  //bubble_sort(arg_tab, argc-1);
+  int i;
+  printf("AFTER SORT\n");
+  for ( i = 0 ; i < argc - 1 ; i++ ) {
+    printf("arg_tab[%d] = %d\n", i, arg_tab[i] );
+  }
   free(arg_tab);
   return 0;
 }

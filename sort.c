@@ -5,7 +5,7 @@ int bubble_sort(int *tab, int size){
   int tmp;
   //size_t n = (int)sizeof(tab);
 
-  if ( (2 < size ) && (TAB_MAX > size) ) {
+  if ( (2 <= size ) && (TAB_MAX > size) ) {
     do {
       for ( j = 0 ; j < size-1 ; j++ ) {
         if ( tab[j] > tab[j+1] ) {
@@ -35,3 +35,32 @@ for ( i = 0 ; i < size ; i++){
   printf("arg[%d] = %d\n", i, tab[i]);
 }
 */
+
+int insertion_sort(int *tab, int size){
+  int i,j;
+  int tmp;
+
+  if ( ( 2 <= size ) && ( TAB_MAX > size ) ) {
+    for ( i = 1 ; i < size ; i++ ) {
+      tmp = tab[i];
+      j = i-1;
+      for ( j ; j >= 0 ; j-- ) {
+        if ( tmp < tab[j] ) {
+          tab[j+1] = tab[j];
+          tab[j] = tmp;
+        }
+        else {
+          break;
+        }
+      }
+    }
+    return RET_SUCC;
+  }
+  else if ( TAB_MAX < size ) {
+    printf("\ntoo many args to sort...");
+    return RET_FAIL;
+  }
+  else {
+    return RET_FAIL;
+  }
+}
